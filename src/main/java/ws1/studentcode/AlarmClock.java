@@ -31,6 +31,7 @@ public class AlarmClock
 
     public void register(int interval, AlarmListener pal) {
         itsAlarmClockRecords.add(new AlarmClockRecord(interval, pal));
+
     }
 }
 

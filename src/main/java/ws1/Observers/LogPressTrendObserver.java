@@ -1,7 +1,7 @@
 package ws1.Observers;
 
-import ws1.TrendSensor.Trend;
 
+import ws1.TrendSensor.Trend;
 
 public class LogPressTrendObserver implements Observer<Trend> {
     private Log log;

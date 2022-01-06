@@ -15,13 +15,12 @@ public class WeatherMonitoringSystem {
     private Nimbus1TemperatureSensor itsTS;
     private Nimbus1PressureSensor itsPS;
     private PressureTrendSensor itsPTS;
-    private MonitoringScreen itsScreen;
 
     private WeatherMonitoringSystem(){
         System.out.println("WeatherMonitoringSystem was created");
-        AlarmClock alarmClock = Nimbus1Clock.theInstance();
-        itsTS = new Nimbus1TemperatureSensor("temperature", 700);
+       Nimbus1Clock.theInstance();
         itsPS = new Nimbus1PressureSensor("pressure", 1100);
+        itsTS = new Nimbus1TemperatureSensor("temperature", 700);
         itsPTS = new PressureTrendSensor(itsPS);
 
     }
@@ -35,13 +34,16 @@ public class WeatherMonitoringSystem {
 
     public void addTemperatureObserver(Observer<Integer> observer) {
         itsTS.registerObserver(observer);
+        System.out.println(observer.getType() + " observes " + itsTS.getType());
     }
 
     public void addPressureObserver(Observer<Integer> observer) {
         itsPS.registerObserver(observer);
+        System.out.println(observer.getType() + " observes " + itsTS.getType());
     }
 
     public void addPressureTrendObserver(Observer<Trend> observer) {
         itsPTS.registerObserver(observer);
+        System.out.println(observer.getType() + " observes pressure trend");
     }
 }

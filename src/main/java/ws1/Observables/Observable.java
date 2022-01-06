@@ -17,7 +17,6 @@ public abstract class Observable<T> {
    }
     public void registerObserver(Observer<T> observer) {
         itsObservers.add(observer);
-        System.out.println(observer.getType() + " observes " + this.getType() );
     }
     public String getType(){
         return Type;

@@ -15,6 +15,7 @@ String type = "PressureTrendSensor";
     public PressureTrendSensor(Nimbus1PressureSensor itsPS) {
         super();
         itsPS.registerObserver(this);
+        System.out.println(this.getType() + " observes " + itsPS.getType());
     }
 
     public Trend calc(){
@@ -46,4 +47,6 @@ String type = "PressureTrendSensor";
     public String getType() {
         return type;
     }
+
+
 }
