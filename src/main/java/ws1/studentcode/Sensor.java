@@ -2,8 +2,7 @@ package ws1.studentcode;
 
 
 import ws1.Observables.Observable;
-import ws1.Observables.SensorsAlarmListener;
-import ws1.studentcode.Nimbus1Clock;
+import ws1.Observables.SensorAlarmListener;
 
 public abstract class Sensor extends Observable<Integer> {
 private Integer LastReading = null;
@@ -14,7 +13,7 @@ private Integer Interval;
         this.Interval = interval;
         this.Type = type;
         System.out.println(getType() + " registered to clock");
-        AlarmClock.theInstance().register(interval,new SensorsAlarmListener(this));
+        AlarmClock.theInstance().register(interval,new SensorAlarmListener(this));
     }
 
     public void check(){

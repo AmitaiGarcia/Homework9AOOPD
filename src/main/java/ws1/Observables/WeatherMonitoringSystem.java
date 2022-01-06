@@ -7,12 +7,12 @@ import ws1.TrendSensor.Trend;
 import ws1.studentcode.AlarmClock;
 import ws1.studentcode.Nimbus1Clock;
 import ws1.studentcode.Nimbus1PressureSensor;
-import ws1.studentcode.Nimbus1TempSensor;
+import ws1.studentcode.Nimbus1TemperatureSensor;
 
 public class WeatherMonitoringSystem {
 
     private static WeatherMonitoringSystem singleton;
-    private Nimbus1TempSensor itsTS;
+    private Nimbus1TemperatureSensor itsTS;
     private Nimbus1PressureSensor itsPS;
     private PressureTrendSensor itsPTS;
     private MonitoringScreen itsScreen;
@@ -20,7 +20,7 @@ public class WeatherMonitoringSystem {
     private WeatherMonitoringSystem(){
         System.out.println("WeatherMonitoringSystem was created");
         AlarmClock alarmClock = Nimbus1Clock.theInstance();
-        itsTS = new Nimbus1TempSensor("temperature", 700);
+        itsTS = new Nimbus1TemperatureSensor("temperature", 700);
         itsPS = new Nimbus1PressureSensor("pressure", 1100);
         itsPTS = new PressureTrendSensor(itsPS);
 

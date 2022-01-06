@@ -1,18 +1,17 @@
 package ws1.Observers;
 
-public class MS_TempObserver implements Observer<Integer> {
-
+public class MSPressObserver implements Observer<Integer> {
     private MonitoringScreen monitoringScreen;
-    private String type = "MSTempObserver";
+    private String type = "MSPRessObserver";
 
-    public MS_TempObserver(MonitoringScreen monitoringScreen) {
+    public MSPressObserver(MonitoringScreen monitoringScreen) {
         System.out.println(getType() + " was created");
         this.monitoringScreen = monitoringScreen;
     }
 
     @Override
     public void update(Integer data) {
-        monitoringScreen.displayTemperature(data);
+        monitoringScreen.displayPressure(data);
     }
 
     @Override

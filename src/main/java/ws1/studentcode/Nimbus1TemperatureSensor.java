@@ -4,10 +4,10 @@ import java.util.Random;
 
 import static ws1.studentcode.RandomSupplier.getRnd;
 
-public class Nimbus1TempSensor extends Sensor{
+public class Nimbus1TemperatureSensor extends Sensor{
 Random md;
 
-    public Nimbus1TempSensor(String type, Integer interval) {
+    public Nimbus1TemperatureSensor(String type, Integer interval) {
         super(type, interval);
         md = getRnd();
     }
